@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ui_furniture_app/components/search_box.dart';
 import 'package:ui_furniture_app/constants.dart';
 import 'package:ui_furniture_app/models/product.dart';
+import 'package:ui_furniture_app/screens/detail/detail_screen.dart';
 import 'package:ui_furniture_app/screens/product/components/category_list.dart';
 import 'package:ui_furniture_app/screens/product/components/product_cards.dart';
 
@@ -43,7 +44,14 @@ class Body extends StatelessWidget {
                   itemBuilder: (context, index) => ProductCards(
                     itemIndex: index,
                     product: products[index],
-                    press: () {},
+                    press: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (contex) => DetailProduct(),
+                        ),
+                      );
+                    },
                   ),
                 ),
               ],
