@@ -48,7 +48,9 @@ class Body extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (contex) => DetailProduct(),
+                          builder: (contex) => DetailProduct(
+                            products: products[index],
+                          ),
                         ),
                       );
                     },

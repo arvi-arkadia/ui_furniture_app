@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ui_furniture_app/constants.dart';
+import 'package:ui_furniture_app/models/product.dart';
 import 'package:ui_furniture_app/screens/detail/components/body.dart';
 
 class DetailProduct extends StatelessWidget {
-  const DetailProduct({super.key});
-
+  const DetailProduct({
+    super.key,
+    required this.products,
+  });
+  final Product products;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kPrimaryColor,
       appBar: buildAppBar(context),
-      body: Body(),
+      body: Body(
+        products: products,
+      ),
     );
   }
 
